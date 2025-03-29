@@ -13,7 +13,7 @@ export default function Home() {
     async function fetchData() {
       if (!sheetUrl) return;  // Only fetch if the sheet URL is provided
       try {
-        const res = await axios.post('http://localhost:3001/api/getdata', { sheetUrl });
+        const res = await axios.post('http://192.168.29.14:3001/api/getdata', { sheetUrl });
         setData(res.data.data);
       } catch (err) {
         console.log(err.response);
@@ -21,7 +21,7 @@ export default function Home() {
     }
     fetchData();
 
-    const socket = new WebSocket('ws://localhost:3001');
+    const socket = new WebSocket('ws://http://192.168.29.14:3001');
 
     socket.onopen = () => {
       console.log('WebSocket connected');
