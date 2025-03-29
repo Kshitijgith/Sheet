@@ -21,7 +21,7 @@ export default function Home() {
     }
     fetchData();
 
-    const socket = new WebSocket('ws://http://192.168.29.14:3001');
+    const socket = new WebSocket('ws://192.168.29.14:3001');
 
     socket.onopen = () => {
       console.log('WebSocket connected');
